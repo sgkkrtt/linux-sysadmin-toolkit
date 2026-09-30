@@ -1,0 +1,12 @@
+[Unit]
+Description=Controle de capacite disque Linux Toolkit
+
+[Service]
+Type=oneshot
+User=toolkit
+WorkingDirectory=/opt/linux-sysadmin-toolkit
+ExecStart=/usr/bin/python3 -m sysadmin_toolkit disk --path / --threshold 85
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
